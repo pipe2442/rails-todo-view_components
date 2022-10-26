@@ -1,0 +1,22 @@
+<div id="<%= dom_id @todo %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= @todo.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= @todo.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Completed:</strong>
+    <%= @todo.completed %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this todo", @todo, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this todo', edit_todo_path(@todo), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium", data: {turbo_frame: 'modal'} %>
+    <hr class="mt-6">
+  <% end %>
+</div>
